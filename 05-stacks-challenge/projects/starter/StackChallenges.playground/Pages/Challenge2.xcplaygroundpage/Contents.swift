@@ -16,5 +16,23 @@
 var testString1 = "h((e))llo(world)()"
 
 // your code here
+func checkParentheses(_ element: String) -> Bool {
+    
+    var myStack = Stack<Character>()
+    
+    for char in element {
+        if char == "(" {
+            myStack.push(char)
+        } else if char == ")" {
+            
+            if myStack.isEmpty {
+                return false
+            } else {
+                myStack.pop()
+            }
+        }
+    }
+    return myStack.isEmpty
+}
 
 // checkParentheses(testString1) // should be true
