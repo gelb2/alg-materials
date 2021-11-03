@@ -6,6 +6,18 @@ public class AVLNode<Element> {
   public var value: Element
   public var leftChild: AVLNode?
   public var rightChild: AVLNode?
+  public var height = 0
+    public var balanceFactor: Int {
+        leftHeight - rightHeight
+    }
+    
+    public var leftHeight: Int {
+        leftChild?.height ?? -1
+    }
+    
+    public var rightHeight: Int {
+        rightChild?.height ?? -1
+    }
   
   public init(value: Element) {
     self.value = value
